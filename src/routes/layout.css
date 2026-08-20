@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+@plugin 'daisyui' {
+	themes: all;
+}
+
+@layer components {
+	.btn:active:not(.btn-active) {
+		translate: 0 !important;
+	}
+}
