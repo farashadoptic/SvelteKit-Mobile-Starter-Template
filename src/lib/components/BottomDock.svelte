@@ -1,15 +1,16 @@
 <script>
 	import House from '@lucide/svelte/icons/house';
-	import Search from '@lucide/svelte/icons/search';
+	import ScanEye from '@lucide/svelte/icons/scan-eye';
+	import Users from '@lucide/svelte/icons/users-round';
 	import Info from '@lucide/svelte/icons/info';
 	import Settings from '@lucide/svelte/icons/settings';
 	import { page } from '$app/stores';
 
 	const items = [
 		{ routeId: '/', label: 'Home', icon: House },
-		{ routeId: '/search', label: 'search', icon: Search },
-		{ routeId: '/about', label: 'about', icon: Info },
-		{ routeId: '/settings', label: 'settings', icon: Settings }
+		{ routeId: '/settings', label: 'settings', icon: Settings },
+		{ routeId: '/info', label: 'info', icon: Info },
+		{ routeId: '/about', label: 'about', icon: Users },
 	];
 </script>
 

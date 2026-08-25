@@ -6,7 +6,7 @@
 		'/': 'My Android App',
 		'/about': 'About',
 		'/settings': 'Settings',
-		'/search': 'Search'
+		'/info': 'Info'
 	};
 </script>
 

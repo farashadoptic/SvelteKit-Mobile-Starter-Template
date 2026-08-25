@@ -48,7 +48,7 @@
 </script>
 
 <Card title="Toast Component">
-	<div class="flex flex-wrap gap-4">
+	<div class="flex flex-wrap gap-2">
 		<button class="btn btn-block btn-success" onclick={showSuccess}>Success Toast</button>
 		<button class="btn btn-block btn-error" onclick={showError}>Error Toast</button>
 		<button class="btn btn-block btn-warning" onclick={showComplex}>With Actions</button>
