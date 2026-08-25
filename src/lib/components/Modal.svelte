@@ -1,7 +1,7 @@
-<script>
-	let { open = $bindable(false), title = '', children, actions, class: className = '', onClose = () => {}, onOpen = () => {}, preventClose = false } = $props();
+<script lang="ts">
+	let { open = $bindable(false), title = '', children, actions = null, class: className = '', onClose = () => {}, onOpen = () => {}, preventClose = false } = $props();
 
-	let modalEl = $state(null);
+	let modalEl = $state<HTMLDialogElement | null>(null);
 
 	$effect(() => {
 		const el = modalEl;
@@ -17,24 +17,24 @@
 		}
 	});
 
-	function handleKeyDown(e) {
+	function handleKeyDown(e: KeyboardEvent) {
 		if (preventClose && e.key === 'Escape') {
 			e.preventDefault();
 		}
 	}
 
-	function handleCancel(e) {
+	function handleCancel(e: Event) {
 		if (preventClose) {
 			e.preventDefault();
 		}
 	}
 
-	function handleBackdrop(e) {
+	function handleBackdrop(e: MouseEvent) {
 		if (preventClose) return;
 		if (e.target === modalEl) open = false;
 	}
 
-	function handleClose(event) {
+	function handleClose(event: Event) {
 		if (preventClose && open) {
 			setTimeout(() => {
 				if (open && modalEl && !modalEl.open) {

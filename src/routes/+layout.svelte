@@ -4,6 +4,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import BottomDock from '$lib/components/BottomDock.svelte';
 	import ToastHost from '$lib/components/ToastHost.svelte';
+	import ModalHost from '$lib/components/ModalHost.svelte';
 
 	let { children } = $props();
 </script>
@@ -18,4 +19,5 @@
 </div>
 
 <ToastHost />
+<ModalHost />
 <BottomDock />
