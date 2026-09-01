@@ -8,18 +8,18 @@
 
 	const items = [
 		{ routeId: '/', label: 'Home', icon: House },
-		{ routeId: '/settings', label: 'settings', icon: Settings },
-		{ routeId: '/info', label: 'info', icon: Info },
-		{ routeId: '/about', label: 'about', icon: Users },
+		{ routeId: '/settings', label: 'Settings', icon: Settings },
+		{ routeId: '/info', label: 'Info', icon: Info },
+		{ routeId: '/about', label: 'About', icon: Users }
 	];
 </script>
 
-<div class="dock border-0 shadow-sm [&>*::after]:h-[0.1rem] [&>*::after]:text-neutral" style="--tw-shadow: 0 -1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05));">
+<div class="dock border-0 shadow-sm [&>*::after]:h-[0.1rem] [&>*::after]:border-t-2" style="--tw-shadow: 0 -1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05));">
 	{#each items as item}
-	{@const Component = item.icon}
-		<a href={item.routeId === '/' ? '/' : item.routeId} class="{$page.route.id === item.routeId ? 'dock-active' : ''}">
-			<Component class="w-5 mb-0.5" />
-			<span class="dock-label">{item.label}</span>
+		{@const Component = item.icon}
+		<a href={item.routeId === '/' ? '/' : item.routeId} class={$page.route.id === item.routeId ? 'dock-active' : ''}>
+			<Component class="mb-0.5 w-5" />
+			<span class="dock-label font-medium">{item.label}</span>
 		</a>
 	{/each}
 </div>

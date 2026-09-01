@@ -1,5 +1,6 @@
 <script>
 	import EllipsisVertical from '@lucide/svelte/icons/ellipsis-vertical';
+	import ExternalLink from '@lucide/svelte/icons/external-link';
 	import { page } from '$app/stores';
 
 	const titles = {
@@ -10,7 +11,7 @@
 	};
 </script>
 
-<div class="navbar bg-base-100 shadow-sm">
+<div class="navbar fixed top-0 right-0 left-0 z-50 bg-base-100 shadow-sm">
 	<div class="hidden flex-none">
 		<button class="btn btn-square btn-ghost" title="">
 			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current">
@@ -23,15 +24,15 @@
 	</div>
 	<div class="flex-none">
 		<div class="dropdown dropdown-end">
-			<div tabindex="0" role="button" class="btn btn-sm m-1 btn-square btn-ghost">
-				<EllipsisVertical size={20}/>
+			<div tabindex="0" role="button" class="btn m-1 btn-square btn-ghost btn-sm">
+				<EllipsisVertical size={20} />
 			</div>
 			<ul tabindex="-1" class="menu dropdown-content z-1 w-52 rounded-box bg-base-100 p-2 shadow-sm">
 				<li>
-					<button>Item 1</button>
-				</li>
-				<li>
-					<button>Item 2</button>
+					<a href="https://yasinasasi.ir/" target="_blank">
+						<ExternalLink size={14} class="-mt-0.5" />
+						Developer Website
+					</a>
 				</li>
 			</ul>
 		</div>

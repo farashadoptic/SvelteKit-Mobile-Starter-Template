@@ -10,3 +10,33 @@
 		translate: 0 !important;
 	}
 }
+
+@font-face {
+	font-family: 'Estedad';
+	src:
+		url('fonts/Estedad[wght].woff2') format('woff2 supports variations'),
+		url('fonts/Estedad[wght].woff2') format('woff2-variations');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+	font-feature-settings:
+		'ss01' off,
+		'ss02' off,
+		'ss03' on,
+		'ss10' on,
+		'ss11' on,
+		'ss12' off,
+		'ss20' on;
+}
+
+html {
+	font-size: 1.05rem;
+}
+
+body {
+	font-family: 'Estedad';
+}
+
+.main-container {
+	height: calc(100vh - 134px);
+}
