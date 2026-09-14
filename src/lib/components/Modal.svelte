@@ -1,7 +1,8 @@
 <script lang="ts">
-	let { open = $bindable(false), title = '', children, variant = 'center', actions = null, class: className = '', onClose = () => {}, onOpen = () => {}, preventClose = false } = $props();
+	import X from '@lucide/svelte/icons/x';
+	let { open = $bindable(false), title = '', children, variant = 'center', actions = null, class: className = '', onClose = () => {}, onOpen = () => {}, preventClose = false, xClose = false } = $props();
 
-    let modalClass = $derived(variant === 'bottom' ? 'modal modal-bottom' : 'modal modal-middle');
+	let modalClass = $derived(variant === 'bottom' ? 'modal modal-bottom' : 'modal modal-middle');
 	let modalEl = $state<HTMLDialogElement | null>(null);
 
 	$effect(() => {
@@ -52,9 +53,19 @@
 
 <dialog bind:this={modalEl} class="{modalClass} select-none" onkeydown={handleKeyDown} oncancel={handleCancel} onclick={handleBackdrop} onclose={handleClose}>
 	<div class="modal-box {className}">
-		{#if title}
-			<h3 class="text-lg font-bold">{title}</h3>
-		{/if}
+		<div class="flex items-center justify-between">
+			{#if title}
+				<h3 class="text-lg font-bold">{title}</h3>
+			{/if}
+
+			{#if !preventClose && xClose}
+				<form method="dialog">
+					<button class="btn btn-square btn-ghost btn-sm">
+						<X size={20}/>
+					</button>
+				</form>
+			{/if}
+		</div>
 
 		<div class="my-2 max-h-96 overflow-y-auto">
 			{@render children?.()}

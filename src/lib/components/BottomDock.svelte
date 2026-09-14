@@ -17,7 +17,8 @@
 <div class="dock border-0 shadow-sm [&>*::after]:h-[0.1rem] [&>*::after]:border-t-2" style="--tw-shadow: 0 -1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05));">
 	{#each items as item}
 		{@const Component = item.icon}
-		<a href={item.routeId === '/' ? '/' : item.routeId} class={$page.route.id === item.routeId ? 'dock-active' : ''}>
+		{@const isActive = $page.url.pathname === item.routeId}
+		<a href={item.routeId} class={isActive ? 'dock-active' : ''}>
 			<Component class="mb-0.5 w-5" />
 			<span class="dock-label font-medium">{item.label}</span>
 		</a>
