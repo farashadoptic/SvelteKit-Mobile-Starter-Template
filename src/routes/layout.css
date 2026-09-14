@@ -31,8 +31,10 @@
 
 html {
 	font-size: 1.05rem;
+	--default-font-feature-settings: 'ss01' off, 'ss02' off, 'ss03' on, 'ss10' on, 'ss11' on, 'ss12' off, 'ss20' on;
 }
 
+html,
 body {
 	font-family: 'Estedad';
 }

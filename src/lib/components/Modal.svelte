@@ -1,6 +1,7 @@
 <script lang="ts">
-	let { open = $bindable(false), title = '', children, actions = null, class: className = '', onClose = () => {}, onOpen = () => {}, preventClose = false } = $props();
+	let { open = $bindable(false), title = '', children, variant = 'center', actions = null, class: className = '', onClose = () => {}, onOpen = () => {}, preventClose = false } = $props();
 
+    let modalClass = $derived(variant === 'bottom' ? 'modal modal-bottom' : 'modal modal-middle');
 	let modalEl = $state<HTMLDialogElement | null>(null);
 
 	$effect(() => {
@@ -49,13 +50,13 @@
 	}
 </script>
 
-<dialog bind:this={modalEl} class="modal select-none" onkeydown={handleKeyDown} oncancel={handleCancel} onclick={handleBackdrop} onclose={handleClose}>
+<dialog bind:this={modalEl} class="{modalClass} select-none" onkeydown={handleKeyDown} oncancel={handleCancel} onclick={handleBackdrop} onclose={handleClose}>
 	<div class="modal-box {className}">
 		{#if title}
 			<h3 class="text-lg font-bold">{title}</h3>
 		{/if}
 
-		<div class="py-4">
+		<div class="my-2 max-h-96 overflow-y-auto">
 			{@render children?.()}
 		</div>
 
