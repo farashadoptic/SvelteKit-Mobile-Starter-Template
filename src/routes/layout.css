@@ -14,8 +14,8 @@
 @font-face {
 	font-family: 'Estedad';
 	src:
-		url('fonts/Estedad[wght].woff2') format('woff2 supports variations'),
-		url('fonts/Estedad[wght].woff2') format('woff2-variations');
+		url('/fonts/Estedad[wght].woff2') format('woff2 supports variations'),
+		url('/fonts/Estedad[wght].woff2') format('woff2-variations');
 	font-weight: 100 900;
 	font-style: normal;
 	font-display: swap;
@@ -27,6 +27,18 @@
 		'ss11' on,
 		'ss12' off,
 		'ss20' on;
+}
+
+img,
+a {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	user-drag: none;
+	-webkit-user-drag: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
 }
 
 html {
